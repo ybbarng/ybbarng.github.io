@@ -1,69 +1,124 @@
 <!DOCTYPE html>
-<html lang="ko">
 <head>
-        <meta charset="utf-8" />
-        <title>BYBlog - blog</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <title>BYBlog - blog</title>
+
+    <link rel="stylesheet" href="/theme/css/normalize.css" />
+    <link rel="stylesheet" href="/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="/theme/css/style.css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" />	
+    <script src="/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">BYBlog </a></h1>
-                <nav><ul>
-                    <li><a href="/category/markdown.html">Markdown</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<body>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/first-post.html">Test Pelican and MarkDown</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2016-04-25T19:53:00+09:00">
-                Published: 월 25 4월 2016
-        </abbr>
-		<br />
-        <abbr class="modified" title="2016-04-25T19:53:00+09:00">
-                Updated: 월 25 4월 2016
-        </abbr>
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="">BYBlog</a></h1>
+    </div>
+</div>
+</div>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/ybbarng.html">ybbarng</a>
-        </address>
-<p>In <a href="/category/markdown.html">Markdown</a>.</p>
-<p>tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/markdown.html">markdown</a> <a href="/tag/publishing.html">publishing</a> <a href="/tag/blog.html">blog</a> </p>
-</footer><!-- /.post-info --><p>This is test page.</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+<!-- Main Page Content and Sidebar -->
+<div class="row">
 
-</body>
-</html>
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+        
+
+            <article>
+                <a href="/first-post.html"><h3 class="article-title">Test Pelican and MarkDown</h3></a>
+<h6 class="subheader" title="2016-04-25T19:53:00+09:00">월 25 4월 2016
+</h6>
+
+
+<p>This is test page.</p><p class="subheader">Category: <a href="/category/markdown.html">Markdown</a>
+
+    Tagged: 
+    <a href="/tag/pelican.html">pelican </a>
+    <a href="/tag/markdown.html">markdown </a>
+    <a href="/tag/publishing.html">publishing </a>
+    <a href="/tag/blog.html">blog </a>
+</p>
+
+
+
+            </article>
+
+
+
+
+            <!-- /#posts-list -->
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="/archives.html">Archives</a>
+            <li><a href="/tags.html">Tags</a>
+
+
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="/category/markdown.html">Markdown</a></li>
+   
+        </ul>
+
+        <h5 class="sidebar-title">Links</h5>
+        <ul class="side-nav">
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="#">You can modify those links in your config file</a></li>
+        </ul>
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="#">You can add links in your config file</a></li>
+            <li><a href="#">Another social link</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+                <p>BYBlog by ybbarng</p>
+            </div>
+            </div>
+    </div>
+</footer>
