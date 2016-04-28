@@ -11838,27 +11838,35 @@ jQuery(document).ready(function($) {
 <li>
 <p>식 1
 <div class="math">$$
-e = \lim_{x\to\infty} (1 + \frac{1}{x})^x
+e = \lim_{n\to\infty} (1 + \frac{1}{n})^n
 $$</div>
 </p>
 </li>
 <li>
 <p>식 2
 <div class="math">$$
-e = \lim_{x\to0} (1 + x)^\frac{1}{x}
+e = \lim_{n\to0} (1 + x)^\frac{1}{n}
 $$</div>
 </p>
 </li>
 <li>
 <p>식 3
 <div class="math">$$
-e = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum_{n=0}^{\infty} \frac{x^n}{n!}
+\lim_{n\to\infty} (1 + \frac{x}{n})^n = \lim_{n\to\infty} ((1 + \frac{x}{n})^\frac{n}{x})^x = (\lim_{n\to\infty} (1 + \frac{x}{n})^\frac{n}{x})^x = e^x \quad (x \neq 0)
+$$</div>
+</p>
+</li>
+<li>
+<p>식 4
+<div class="math">$$
+e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum_{n=0}^{\infty} \frac{x^n}{n!}
 $$</div>
 </p>
 </li>
 </ol>
+<p>출처 : <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">e (mathematical constant), Wikipedia</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
+    var align = "left",
         indent = "0em",
         linebreak = "false";
 
