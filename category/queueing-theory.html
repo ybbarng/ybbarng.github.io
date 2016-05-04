@@ -11827,6 +11827,124 @@ jQuery(document).ready(function($) {
         
 
             <article>
+                <a href="/kendals-notation.html"><h3 class="article-title">켄달 표기법 (Kendal's Notation)</h3></a>
+<h6 class="subheader" title="2016-05-04T18:28:21.153461+09:00">수 04 5월 2016
+</h6>
+
+
+<p>Queueing System을 표현하기 위한 한 가지 방법이다.
+Continuous time stochastic proccess에만 사용한다.</p>
+<p>Arrival Process / Service Time Distribution / 서버 수 / 큐의 길이 / Size of Population / Queueing Discipline</p>
+<ul>
+<li>Arrival Process / Service Time Distribution은 다음 값을 가질 수 있다.<ul>
+<li><span class="math">\(M\)</span> : 푸아송 분포, 지수 시간 분포</li>
+<li><span class="math">\(E_k\)</span> : <span class="math">\(k\)</span>단계 Erlang 분포</li>
+<li><span class="math">\(D\)</span> : deterministic distribution</li>
+<li><span class="math">\(G\)</span> : general distribution</li>
+<li><span class="math">\(GI\)</span> : general &amp; independent arrival</li>
+</ul>
+</li>
+<li>큐의 길이 (서버의 job 수 포함) - default : <span class="math">\(\infty\)</span></li>
+<li>Size of Population - default : <span class="math">\(\infty\)</span></li>
+<li>
+<p>Queueing Discipline</p>
+<ul>
+<li>default : FCFS</li>
+<li>LCFS</li>
+<li>RS (random selection)</li>
+<li>PR (Priory) : preemptive or non-preemptive</li>
+</ul>
+</li>
+<li>
+<p>예시</p>
+<ul>
+<li><span class="math">\(M/M/1\)</span></li>
+<li><span class="math">\(M/G/1\)</span></li>
+<li><span class="math">\(M/G/1\)</span></li>
+<li><span class="math">\(E_k/M/1\)</span></li>
+<li><span class="math">\(M/M/c/c\)</span> (no queueing)</li>
+<li><span class="math">\(M/M/c/K\)</span> (<span class="math">\(K &gt; c\)</span>)</li>
+<li><span class="math">\(M/M/\infty\)</span> (no waiting)</li>
+<li><span class="math">\(M/G/\infty\)</span></li>
+<li><span class="math">\(GI/G/1\)</span></li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><p class="subheader">Category: <a href="/category/queueing-theory.html">queueing-theory</a>
+
+    Tagged: 
+    <a href="/tag/data-analysis.html">data analysis </a>
+    <a href="/tag/queueing-theory.html">queueing theory </a>
+</p>
+
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
                 <a href="/mx_m_1.html"><h3 class="article-title">$M^x/M/1$ Queueing System</h3></a>
 <h6 class="subheader" title="2016-05-04T18:23:03.578256+09:00">수 04 5월 2016
 </h6>
@@ -11834,6 +11952,62 @@ jQuery(document).ready(function($) {
 
 <p><span class="math">\(M^x/M/1\)</span> queueing system</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script type='text/javascript'>if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "left",
         indent = "0em",
         linebreak = "false";
@@ -11899,10 +12073,9 @@ jQuery(document).ready(function($) {
 
 
 
+                <a class="button radius secondary small right" href="/mx_m_1.html">Read More</a>
+                <hr  class="gradient"/>
             </article>
-
-
-
 
             <!-- /#posts-list -->
 
@@ -11922,11 +12095,11 @@ jQuery(document).ready(function($) {
 		
         <h5 class="sidebar-title">Categories</h5>
         <ul class="side-nav">
-            <li><a href="/category/data-analysis.html">Data Analysis</a></li>
             <li><a href="/category/jupyter.html">Jupyter</a></li>
             <li><a href="/category/markdown.html">Markdown</a></li>
             <li><a href="/category/mathematics.html">Mathematics</a></li>
             <li><a href="/category/queueing-theory.html">queueing-theory</a></li>
+            <li><a href="/category/quiz.html">quiz</a></li>
    
         </ul>
 
