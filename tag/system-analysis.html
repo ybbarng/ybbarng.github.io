@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>RenderMath 테스트</title>
+    <title>BYBlog - system analysis</title>
 
     
 <style type="text/css">
@@ -11823,23 +11823,24 @@ jQuery(document).ready(function($) {
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
-<article>
-    <header>
-        <h3 class="article-title"><a href="/third-post.html" rel="bookmark"
-        title="Permalink to RenderMath 테스트">RenderMath 테스트</a></h3>
-    </header>
+        
+        
 
-<h6 class="subheader" title="2016-04-27T17:50:00+09:00">수 27 4월 2016
+            <article>
+                <a href="/mx_m_1.html"><h3 class="article-title">$M^x/M/1$ Queueing System</h3></a>
+<h6 class="subheader" title="2016-05-04T19:13:56.641022+09:00">수 04 5월 2016
 </h6>
 
 
-    <p>RenderMath를 테스트해보기 위한 페이지
-inline math <span class="math">\(e=mc^2\)</span> 테스트</p>
-<p>math block test
+<p>Compound Poisson arrival proccess(CPP)의 형태로 job이 도착하는데, 이를 다른 말로는 Batch 또는 Bulk arrival이라고 한다.
+기존의 <span class="math">\(M/M/1\)</span> 모델과의 차이점은, 한 번의 arrival에 여러개의 job이 들어올 수 있다는 점이다. 이것은 한 번의 arrival에 한 번의 job이 도착하는 여러개의 Poisson process의 합으로 볼 수 있다.</p>
+<p>이 때 batch의 크기는 다음의 일반적인 분포를 따르는 random variable G라고 하자.
 </p>
-<div class="math">$$ x^2 $$</div>
+<div class="math">$$ Pr\{G = n\} = gn (n \geq 1)$$</div>
+<p><img src="/images/system-analysis/queueing-theory/mx_m_1_state_transition_diagram.png"></p>
+<p>시스템의 성능을 평가하기 위해서는 여러 지표들을 뽑아야 한다. 그 중 대표적으로 쓰는 것이 평균 job 수 <span class="math">\(\bar{N}\)</span>이다.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
+    var align = "left",
         indent = "0em",
         linebreak = "false";
 
@@ -11894,22 +11895,118 @@ inline math <span class="math">\(e=mc^2\)</span> 테스트</p>
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script>
-<p class="subheader">Category: <a href="/category/markdown.html">Markdown</a>
+</script><p class="subheader">Category: <a href="/category/queueing-theory.html">queueing-theory</a>
 
     Tagged: 
-    <a href="/tag/pelican.html">pelican </a>
-    <a href="/tag/markdown.html">markdown </a>
-    <a href="/tag/publishing.html">publishing </a>
-    <a href="/tag/blog.html">blog </a>
-    <a href="/tag/math.html">math </a>
-    <a href="/tag/mathjax.html">mathjax </a>
+    <a href="/tag/system-analysis.html">system analysis </a>
+    <a href="/tag/queueing-theory.html">queueing theory </a>
+    <a href="/tag/poisson.html">poisson </a>
 </p>
 
 
 
+            </article>
 
-</article>
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
+                <a href="/kendals-notation.html"><h3 class="article-title">켄달 표기법 (Kendal's Notation)</h3></a>
+<h6 class="subheader" title="2016-05-04T19:13:45.168632+09:00">수 04 5월 2016
+</h6>
+
+
+<p>켄달 표기법은 큐의 특성을 나타내기 위한 표기법이다.</p><p class="subheader">Category: <a href="/category/queueing-theory.html">queueing-theory</a>
+
+    Tagged: 
+    <a href="/tag/system-analysis.html">system analysis </a>
+    <a href="/tag/queueing-theory.html">queueing theory </a>
+</p>
+
+
+
+                <a class="button radius secondary small right" href="/kendals-notation.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="/system-analysis-quiz-4.html"><h3 class="article-title">시스템 성능 평가 퀴즈4</h3></a>
+<h6 class="subheader" title="2016-05-04T19:13:25.975775+09:00">수 04 5월 2016
+</h6>
+
+
+<p>Quiz 4 of System Analysis class</p><p class="subheader">Category: <a href="/category/quiz.html">quiz</a>
+
+    Tagged: 
+    <a href="/tag/system-analysis.html">system analysis </a>
+    <a href="/tag/quiz.html">quiz </a>
+    <a href="/tag/markov-chain.html">markov chain </a>
+    <a href="/tag/transition-probability-diagram.html">transition probability diagram </a>
+</p>
+
+
+
+                <a class="button radius secondary small right" href="/system-analysis-quiz-4.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="/system-analysis-quiz-3.html"><h3 class="article-title">시스템 성능 평가 퀴즈3</h3></a>
+<h6 class="subheader" title="2016-05-04T19:13:09.715083+09:00">수 04 5월 2016
+</h6>
+
+
+<p>Quiz 3 of System Analysis class</p><p class="subheader">Category: <a href="/category/quiz.html">quiz</a>
+
+    Tagged: 
+    <a href="/tag/system-analysis.html">system analysis </a>
+    <a href="/tag/quiz.html">quiz </a>
+    <a href="/tag/markov-chain.html">markov chain </a>
+    <a href="/tag/transition-probability-diagram.html">transition probability diagram </a>
+</p>
+
+
+
+                <a class="button radius secondary small right" href="/system-analysis-quiz-3.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="/system-analysis-quiz-1.html"><h3 class="article-title">시스템 성능 평가 퀴즈1</h3></a>
+<h6 class="subheader" title="2016-05-04T19:12:09.132866+09:00">수 04 5월 2016
+</h6>
+
+
+<p>Quiz 1 of System Analysis class</p><p class="subheader">Category: <a href="/category/quiz.html">quiz</a>
+
+    Tagged: 
+    <a href="/tag/system-analysis.html">system analysis </a>
+    <a href="/tag/quiz.html">quiz </a>
+    <a href="/tag/markov-chain.html">markov chain </a>
+    <a href="/tag/transition-probability-diagram.html">transition probability diagram </a>
+</p>
+
+
+
+                <a class="button radius secondary small right" href="/system-analysis-quiz-1.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+            <!-- /#posts-list -->
+
     </div>
     <!-- End Main Content -->
 
@@ -11929,6 +12026,8 @@ inline math <span class="math">\(e=mc^2\)</span> 테스트</p>
             <li><a href="/category/jupyter.html">Jupyter</a></li>
             <li><a href="/category/markdown.html">Markdown</a></li>
             <li><a href="/category/mathematics.html">Mathematics</a></li>
+            <li><a href="/category/queueing-theory.html">queueing-theory</a></li>
+            <li><a href="/category/quiz.html">quiz</a></li>
    
         </ul>
 
