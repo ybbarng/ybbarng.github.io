@@ -11829,7 +11829,7 @@ jQuery(document).ready(function($) {
         title="Permalink to $M^x/M/1$ Queueing System">$M^x/M/1$ Queueing System</a></h3>
     </header>
 
-<h6 class="subheader" title="2016-05-04T19:13:56.641022+09:00">수 04 5월 2016
+<h6 class="subheader" title="2016-05-04T19:27:16.478711+09:00">수 04 5월 2016
 </h6>
 
 
@@ -11837,9 +11837,14 @@ jQuery(document).ready(function($) {
 기존의 <span class="math">\(M/M/1\)</span> 모델과의 차이점은, 한 번의 arrival에 여러개의 job이 들어올 수 있다는 점이다. 이것은 한 번의 arrival에 한 번의 job이 도착하는 여러개의 Poisson process의 합으로 볼 수 있다.</p>
 <p>이 때 batch의 크기는 다음의 일반적인 분포를 따르는 random variable G라고 하자.
 </p>
-<div class="math">$$ Pr\{G = n\} = gn (n \geq 1)$$</div>
+<div class="math">$$ Pr\{G = n\} = gn \quad (n \geq 1)$$</div>
+<p>시스템의 성능을 평가하기 위해서는 여러 지표들을 뽑아야 한다. 그 중 대표적으로 쓰는 것이 평균 job 수 <span class="math">\(\bar{N}\)</span>이다. 그동안에는 <span class="math">\(\bar{N}\)</span>을 구하기 위해서는 probability distribution <span class="math">\(Pr\{N(t)=n\}\)</span>을 구했지만, 이제부터는 이것을 구하기 어렵다. 따라서 앞으로는 Probability Generating Function을 사용해서 <span class="math">\(\bar{N}\)</span>을 구하게 된다.</p>
+<p>우선 <span class="math">\(M^x/M/1\)</span>의 state transition diagram을 그리면 아래와 같다.</p>
 <p><img src="/images/system-analysis/queueing-theory/mx_m_1_state_transition_diagram.png"></p>
-<p>시스템의 성능을 평가하기 위해서는 여러 지표들을 뽑아야 한다. 그 중 대표적으로 쓰는 것이 평균 job 수 <span class="math">\(\bar{N}\)</span>이다.</p>
+<p>위 그림에서, 다음 식들을 유도할 수 있다.
+</p>
+<div class="math">$$\lambda P_0 = \mu P_1 \quad \cdots (1)$$</div>
+<div class="math">$$(\lambda + \mu)P_n = \mu P_{n+1} + \lambda \sum_{k=1}^n g_k P_{n_k} \quad \cdots (2)$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "left",
         indent = "0em",
