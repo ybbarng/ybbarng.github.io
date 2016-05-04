@@ -11828,7 +11828,7 @@ jQuery(document).ready(function($) {
 
             <article>
                 <a href="/mx_m_1.html"><h3 class="article-title">$M^x/M/1$ Queueing System</h3></a>
-<h6 class="subheader" title="2016-05-04T19:30:50.778399+09:00">수 04 5월 2016
+<h6 class="subheader" title="2016-05-04T19:41:04.154224+09:00">수 04 5월 2016
 </h6>
 
 
@@ -11844,6 +11844,17 @@ jQuery(document).ready(function($) {
 </p>
 <div class="math">$$\lambda P_0 = \mu P_1 \quad \cdots (1)$$</div>
 <div class="math">$$(\lambda + \mu)P_n = \mu P_{n+1} + \lambda \sum_{k=1}^n g_k P_{n-k} \quad (n \geq 1) \quad \cdots (2)$$</div>
+<h3><span class="math">\(\bar{N}\)</span>을 구하는 2가지 방법</h3>
+<ol>
+<li>
+<p><span class="math">\(n P_n\)</span>을 가능한한 구해서 대략적인 값을 구하기</p>
+<p><span class="math">\(\bar{N} \approx \sum_{k=0}^n k P_k \quad (n Pn &lt; \varepsilon)\)</span></p>
+</li>
+<li>
+<p>Probability generating function에서 <span class="math">\(\bar{N}\)</span> 구하기</p>
+<p>X에 대한 probability generating function <span class="math">\(Y(Z) = E[Z^x]\)</span>에 대해서, <span class="math">\(E[X] = Y'(1)\)</span></p>
+</li>
+</ol>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "left",
         indent = "0em",
