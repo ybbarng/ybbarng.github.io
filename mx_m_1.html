@@ -11829,7 +11829,7 @@ jQuery(document).ready(function($) {
         title="Permalink to $M^x/M/1$ Queueing System">$M^x/M/1$ Queueing System</a></h3>
     </header>
 
-<h6 class="subheader" title="2016-05-04T19:42:54.600059+09:00">수 04 5월 2016
+<h6 class="subheader" title="2016-05-11T18:39:15.327667+09:00">수 11 5월 2016
 </h6>
 
 
@@ -11837,7 +11837,7 @@ jQuery(document).ready(function($) {
 기존의 <span class="math">\(M/M/1\)</span> 모델과의 차이점은, 한 번의 arrival에 여러개의 job이 들어올 수 있다는 점이다. 이것은 한 번의 arrival에 한 번의 job이 도착하는 여러개의 Poisson process의 합으로 볼 수 있다.</p>
 <p>이 때 batch의 크기는 다음의 일반적인 분포를 따르는 random variable G라고 하자.
 </p>
-<div class="math">$$ Pr\{G = n\} = gn \quad (n \geq 1)$$</div>
+<div class="math">$$ Pr\{G = n\} = g_n \quad (n \geq 1)$$</div>
 <p>시스템의 성능을 평가하기 위해서는 여러 지표들을 뽑아야 한다. 그 중 대표적으로 쓰는 것이 평균 job 수 <span class="math">\(\bar{N}\)</span>이다. 그동안에는 <span class="math">\(\bar{N}\)</span>을 구하기 위해서는 probability distribution <span class="math">\(Pr\{N(t)=n\}\)</span>을 구했지만, 이제부터는 이것을 구하기 어렵다. 따라서 앞으로는 Probability Generating Function을 사용해서 <span class="math">\(\bar{N}\)</span>을 구하게 된다.</p>
 <p>우선 <span class="math">\(M^x/M/1\)</span>의 state transition diagram을 그리면 아래와 같다.</p>
 <p><img src="/images/system-analysis/queueing-theory/mx_m_1_state_transition_diagram.png"></p>
@@ -11853,9 +11853,98 @@ jQuery(document).ready(function($) {
 </li>
 <li>
 <p>Probability generating function에서 <span class="math">\(\bar{N}\)</span> 구하기</p>
-<p><span class="math">\(X\)</span>에 대한 probability generating function <span class="math">\(Y(Z) = E[Z^X]\)</span>에 대해서, <span class="math">\(E[X] = Y'(1)\)</span></p>
+<p>state variable <span class="math">\(X\)</span>에 대한 probability generating function <span class="math">\(Y(z) = E[z^X]\)</span>에 대해서, <span class="math">\(E[X] = Y'(1)\)</span></p>
 </li>
 </ol>
+<h3><span class="math">\(\bar{N}\)</span> 계산하기</h3>
+<p>state variable <span class="math">\(X\)</span>에 대한 probability generating function <span class="math">\(Y(z)\)</span>에 대해서  <span class="math">\(E[X] = Y'(1)\)</span>가 성립하는 것을 알고 있으므로, <span class="math">\(Y(z)\)</span>를 구해서 <span class="math">\(\bar{N}\)</span>을 구해보자.</p>
+<p>probability generating function <span class="math">\(Y(z)\)</span>는 다음과 같다.
+</p>
+<div class="math">$$Y(z) = E[z^X] = \sum_{n=0}^{\infty} z^n P_n \quad \cdots (3)$$</div>
+<p>식 <span class="math">\((2)\)</span>의 양변에 <span class="math">\(z^n\)</span>을 곱하고, <span class="math">\(n=1\)</span>부터 <span class="math">\(n=\infty\)</span>까지 식을 쓴 다음 양변을 더하면 다음의 식이 된다.
+</p>
+<div class="math">$$ \sum_{n=1}^{\infty} z^n (\lambda + \mu) P_n = \sum_{n=1}^{\infty}z^n(\mu P_{n+1} + \lambda \sum_{k=1}^{n} g_k P_{n-k})$$</div>
+<p>각 <span class="math">\(\sum\)</span>의 변수와 관계 없는 것들을 밖으로 빼서 정리하면 다음의 식이 된다.
+</p>
+<div class="math">$$ (\lambda + \mu) \sum_{n=1}^{\infty} z^n P_n = \mu \sum_{n=1}^{\infty}z^n P_{n+1} + \lambda \sum_{n=1}^{\infty} z^n \sum_{k=1}^{n} g_k P_{n-k} \quad \cdots (4)$$</div>
+<p>편의상, 위 <span class="math">\((4)\)</span>번 식을 다음과 같이 나누어서 정리하기로 하자.
+</p>
+<div class="math">$$ (\lambda + \mu) \sum_{n=1}^{\infty} z^n P_n \quad \cdots (5)$$</div>
+<div class="math">$$ \mu \sum_{n=1}^{\infty}z^n P_{n+1} \quad \cdots (6)$$</div>
+<div class="math">$$ \lambda \sum_{n=1}^{\infty} z^n \sum_{k=1}^{n} g_k P_{n-k} \quad \cdots (7)$$</div>
+<p>그러면 다음이 성립한다.
+</p>
+<div class="math">$$ (5) = (6) + (7) $$</div>
+<h4><span class="math">\((5)\)</span>번 식 정리</h4>
+<div class="math">$$ (\lambda + \mu) \sum_{n=1}^{\infty} z^n P_n \quad \cdots (5)$$</div>
+<p>식 <span class="math">\((3)\)</span>에서 다음을 알 수 있다.
+</p>
+<div class="math">$$ Y(z) = \sum_{n=0}^{\infty} z^n P_n = z^0 P_0 + \sum_{n=1}^{\infty} z^n P_n = P_0 + \sum_{n=1}^{\infty} z^n P_n $$</div>
+<div class="math">$$ \sum_{n=1}^{\infty} z^n P_n = Y(z) - P_0 \quad \cdots (8)$$</div>
+<p>식 <span class="math">\((8)\)</span>을 식 <span class="math">\((5)\)</span>에 대입하면,
+</p>
+<div class="math">$$ (\lambda + \mu) \sum_{n=1}^{\infty} z^n P_n = (\lambda + \mu) (Y(z) - P_0) \quad \cdots (9)$$</div>
+<h4><span class="math">\((6)\)</span>번 식 정리</h4>
+<div class="math">$$ \mu \sum_{n=1}^{\infty}z^n P_{n+1} \quad \cdots (6)$$</div>
+<p>위 식에서 <span class="math">\(z\)</span>의 지수와 <span class="math">\(P\)</span>의 밑수가 달라서 불편하므로, 다음과 같이 같게 만들어준다.
+</p>
+<div class="math">$$ \mu \sum_{n=1}^{\infty}z^n P_{n+1} = \frac{\mu}{z} \sum_{n=1}^{\infty}z^{n+1} P_{n+1} = \frac{\mu}{z} \sum_{n=2}^{\infty}z^{n} P_{n} \quad \cdots (10)$$</div>
+<p>식 <span class="math">\((3)\)</span>에서 다음을 알 수 있다.
+</p>
+<div class="math">$$ Y(z) = \sum_{n=0}^{\infty} z^n P_n = z^0 P_0 + z^1 P_1 + \sum_{n=2}^{\infty} z^n P_n = P_0 + z P_1 + \sum_{n=2}^{\infty} z^n P_n $$</div>
+<div class="math">$$ \sum_{n=2}^{\infty} z^n P_n = Y(z) - P_0 - z P_1 \quad \cdots (11)$$</div>
+<p>식 <span class="math">\((11)\)</span>을 식 <span class="math">\((10)\)</span>에 대입하면,
+</p>
+<div class="math">$$ \mu \sum_{n=1}^{\infty}z^n P_{n+1} = \frac{\mu}{z} \sum_{n=2}^{\infty}z^{n} P_{n} = \frac{\mu}{z} (Y(z) - P_0 - z P_1) \quad \cdots (12)$$</div>
+<h4><span class="math">\((7)\)</span>번 식 정리</h4>
+<div class="math">$$ \lambda \sum_{n=1}^{\infty} z^n \sum_{k=1}^{n} g_k P_{n-k} \quad \cdots (7)$$</div>
+<p>식 <span class="math">\((7)\)</span>을 정리하기 위해 다음 부분을 떼어내서 생각해보자.
+</p>
+<div class="math">$$ z^n \sum_{k=1}^{n} g_k P_{n-k} \quad \cdots (12)$$</div>
+<p>그러면 다음이 성립한다.
+</p>
+<div class="math">$$ (7) = \lambda \sum_{n=1}^{\infty} (12) \quad \cdots (13)$$</div>
+<p>식 <span class="math">\((12)\)</span>을 정리하기 위해서 다음과 같이 <span class="math">\(z\)</span>를 분배해준다.
+</p>
+<div class="math">$$ z^n \sum_{k=1}^{n} g_k P_{n-k} = \sum_{k=1}^{n} z^k g_k z^{n-k} P_{n-k} \quad \cdots (14)$$</div>
+<p>위 식을 보면, <span class="math">\(Y(z)\)</span>와 random variable <span class="math">\(G\)</span>의 probability generating function으로 정리할 수 있는 것처럼 보인다.</p>
+<p>random variable <span class="math">\(G\)</span>는 batch의 크기에 대한 variable이므로,  <span class="math">\(G\)</span>에 대한 probability generating function을 <span class="math">\(B(z)\)</span>라고 하자.
+</p>
+<div class="math">$$B(z) = E[z^G] = \sum_{k=0}^{\infty} z^k g_k \quad \cdots (15)$$</div>
+<p>편의를 위해서 식 <span class="math">\((7)\)</span>에서 <span class="math">\(\lambda\)</span>를 떼어낸 나머지 부분을 생각해보자.
+</p>
+<div class="math">$$ \sum_{n=1}^{\infty} z^n \sum_{k=1}^{n} g_k P_{n-k} \quad \cdots (16)$$</div>
+<p>다음이 성립한다.
+</p>
+<div class="math">$$ (7) = \lambda (16) \quad \cdots (17)$$</div>
+<p>이제 식 <span class="math">\((14)를 식 $(16)\)</span>에 대입한다.
+</p>
+<div class="math">$$ \sum_{n=1}^{\infty} z^n \sum_{k=1}^{n} g_k P_{n-k} = \sum_{n=1}^{\infty} \sum_{k=1}^{n} z^k g_k z^{n-k} P_{n-k} \quad \cdots (18)$$</div>
+<p>위 식을 풀어서 쓰면 다음 식들의 총합으로 나타낼 수 있다.
+</p>
+<div class="math">$$ \sum_{k=1}^{1} z^k g_k z^{1-k} P_{1-k} = z^1 g_1 z^0 P_0 $$</div>
+<div class="math">$$ \sum_{k=1}^{2} z^k g_k z^{2-k} P_{2-k} = z^1 g_1 z^1 P_1 + z^2 g_2 z^0 P_0 $$</div>
+<div class="math">$$ \sum_{k=1}^{3} z^k g_k z^{3-k} P_{3-k} = z^1 g_1 z^2 P_2 + z^2 g_2 z^1 P_1 + z^3 g_3 z^0 P_0 $$</div>
+<div class="math">$$ \sum_{k=1}^{4} z^k g_k z^{4-k} P_{4-k} = z^1 g_1 z^3 P_3 + z^2 g_2 z^2 P_2 + z^3 g_3 z^1 P_1 + z^4 g_4 z^0 P_0 $$</div>
+<div class="math">$$ \vdots $$</div>
+<p>위 식들을 위아래로 합치면 식 <span class="math">\((18)\)</span>이 되는데, 자세히 살펴보면 우변에서 다음을 알 수 있다.
+</p>
+<div class="math">$$ z^1 g_1 z^0 P_0 + z^1 g_1 z^1 P_1 + z^1 g_1 z^2 P_2 + z^1 g_1 z^3 P_3 + \cdots = z^1 g_1 \sum_{k=1}^{\infty} z^k P_1 = Z^1 g_1 Y(z)$$</div>
+<div class="math">$$ z^2 g_2 z^0 P_0 + z^2 g_2 z^1 P_1 + z^2 g_2 z^2 P_2 + z^2 g_2 z^3 P_3 + \cdots = z^2 g_2 \sum_{k=1}^{\infty} z^k P_1 = Z^2 g_2 Y(z)$$</div>
+<div class="math">$$ z^3 g_3 z^0 P_0 + z^3 g_3 z^1 P_1 + z^3 g_3 z^2 P_2 + z^3 g_3 z^3 P_3 + \cdots = z^3 g_3 \sum_{k=1}^{\infty} z^k P_1 = Z^3 g_3 Y(z)$$</div>
+<div class="math">$$ z^4 g_4 z^0 P_0 + z^4 g_4 z^1 P_1 + z^4 g_4 z^2 P_2 + z^4 g_4 z^3 P_3 + \cdots = z^4 g_4 \sum_{k=1}^{\infty} z^k P_1 = Z^4 g_4 Y(z)$$</div>
+<div class="math">$$ \vdots $$</div>
+<p>위 식들을 모두 합치는 것은 더하는 순서만 바뀐 것이므로 식 <span class="math">\((18)\)</span>과 같다. 식 <span class="math">\((15)\)</span>를 이용하면 다음과 같다.
+</p>
+<div class="math">$$ \sum_{n=1}^{\infty} \sum_{k=1}^{n} z^k g_k z^{n-k} P_{n-k} = \sum_{n=1}^{\infty} Z^n g_n Y(z) = Y(z) = \sum_{n=1}^{\infty} Z^n g_n = Y(z) B(z) \quad \cdots (19)$$</div>
+<p>이제 식 <span class="math">\((17)\)</span>에 의해, 식 <span class="math">\((7)\)</span>을 구할 수 있다.
+</p>
+<div class="math">$$ \lambda \sum_{n=1}^{\infty} z^n \sum_{k=1}^{n} g_k P_{n-k} = \lambda Y(z)B(z) \quad \cdots (20)$$</div>
+<h4>식 <span class="math">\((5)\)</span>, <span class="math">\((6)\)</span>, <span class="math">\((7)\)</span> 종합하기</h4>
+<div class="math">$$ (5) = (6) + (7) $$</div>
+<p>
+이고, 식 <span class="math">\((9)\)</span>, <span class="math">\((12)\)</span>, <span class="math">\((20)\)</span>에 의해,</p>
+<div class="math">$$ (\lambda + \mu) (Y(z) - P_0) = \frac{\mu}{z} (Y(z) - P_0 - z P_1) + \lambda Y(z)B(z) \quad \cdots (21)$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "left",
         indent = "0em",
